@@ -46,9 +46,9 @@ public class PlayerCTRL : MonoBehaviour
     int FaceToRight = 1;
     Rigidbody2D Rig;
     float velocityX;
-    bool IsOnGround;
+    public bool IsOnGround;
     bool IsJumping;
-    public bool IsClimbing;
+    bool IsClimbing;
     bool IsBesideRightWall;
     bool IsBesideLeftWall;
     bool GravitySwitch = true;
@@ -65,7 +65,7 @@ public class PlayerCTRL : MonoBehaviour
         IsOnGround = OnGround();     //判断当前角色是否碰到地面
         IsBesideRightWall = BesideRightWall();    //判断当前角色是否碰到右边的墙
         IsBesideLeftWall = BesideLeftWall();    //判断当前角色是否碰到左边的墙
-        if(!IsOnGround && (IsBesideRightWall || IsBesideLeftWall))
+        if (!IsOnGround && (IsBesideRightWall || IsBesideLeftWall))
         {
             IsClimbing = true;
         }
@@ -205,7 +205,7 @@ public class PlayerCTRL : MonoBehaviour
         }
         #endregion
 
-        
+
 
     }
 
