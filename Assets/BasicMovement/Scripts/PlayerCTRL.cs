@@ -35,6 +35,7 @@ public class PlayerCTRL : MonoBehaviour
     public Vector2 WallSize;
     public float WallWaitTime;
     public float WallVelocity;
+    public float WallAccelerateTime;
     [Header("爬墙跳")]
     Vector2 ClimbingJumpDir;
     public float ClimbingJumpForce;
@@ -48,7 +49,7 @@ public class PlayerCTRL : MonoBehaviour
     float velocityX;
     public bool IsOnGround;
     bool IsJumping;
-    bool IsClimbing;
+    public bool IsClimbing;
     bool IsBesideRightWall;
     bool IsBesideLeftWall;
     bool GravitySwitch = true;
@@ -83,14 +84,39 @@ public class PlayerCTRL : MonoBehaviour
             //}
             if (Rig.velocity.y < 0)
             {
-                Rig.velocity = new Vector2(Rig.velocity.x, -1 * WallVelocity);
+                //if (Rig.velocity.y > -1 * WallVelocity)
+                    Rig.velocity = new Vector2(Rig.velocity.x, -1 * WallVelocity);
+                //else if (Rig.velocity.y <= -1 * WallVelocity)
+                //    Rig.velocity = new Vector2(Rig.velocity.x, Rig.velocity.y - WallAccelerateTime);
+
             }
         }
         #endregion
 
-        #region 爬墙跳
-        if (IsClimbing && Input.GetButtonDown("Jump"))
+        #region 跳跃
+        if (CanJump)
         {
+            if (Input.GetAxis("Jump") == 1 && !IsJumping && IsOnGround)
+            {
+                Rig.velocity = new Vector2(Rig.velocity.x / 10f, JumpingSpeed);
+                IsJumping = true;
+            }
+            if (IsOnGround && Input.GetAxis("Jump") == 0)
+            {
+                IsJumping = false;
+            }
+        }
+        #endregion
+
+        if(CanMove && Input.GetButtonUp("Jump") && Rig.velocity.y > 0)
+        {
+            Rig.velocity = new Vector2(Rig.velocity.x, 0);
+        }
+
+        #region 爬墙跳
+        if (Input.GetButtonDown("Jump") && IsClimbing)
+        {
+            Debug.Log(1);
             if (IsBesideLeftWall && IsWallJumping <= 0)
             {
                 IsWallJumping = 1;
@@ -121,66 +147,54 @@ public class PlayerCTRL : MonoBehaviour
         #region 左右移动
         if (CanMove)
         {
-            if (Rig.velocity.y > 0)
+            if (Input.GetAxisRaw("Horizontal") > 0)
             {
-                if (Input.GetAxisRaw("Horizontal") > 0)
-                {
+                //if(!IsOnGround) Rig.velocity = new Vector2(Mathf.SmoothDamp(Rig.velocity.x, WalkSpeed * Time.fixedDeltaTime * 60 / 2, ref velocityX, 0.04f), Rig.velocity.y);
+                //else 
                     Rig.velocity = new Vector2(Mathf.SmoothDamp(Rig.velocity.x, WalkSpeed * Time.fixedDeltaTime * 60, ref velocityX, AccelerateTime), Rig.velocity.y);
-                    //SmoothDamp四个参数分别为：当前速度，目标速度，加速度，用多长时间从0达到目标速度
-                }
-                else if (Input.GetAxisRaw("Horizontal") < 0)
-                {
+                //SmoothDamp四个参数分别为：当前速度，目标速度，加速度，用多长时间从0达到目标速度
+            }
+            else if (Input.GetAxisRaw("Horizontal") < 0)
+            {
+                //if (!IsOnGround) Rig.velocity = new Vector2(Mathf.SmoothDamp(Rig.velocity.x, WalkSpeed * Time.fixedDeltaTime * -60 / 2, ref velocityX, 0.04f), Rig.velocity.y);
+                //else
                     Rig.velocity = new Vector2(Mathf.SmoothDamp(Rig.velocity.x, WalkSpeed * Time.fixedDeltaTime * -60, ref velocityX, AccelerateTime), Rig.velocity.y);
-                }
-                else
-                {
-                    Rig.velocity = new Vector2(Mathf.SmoothDamp(Rig.velocity.x, 0, ref velocityX, DecelerateTime), Rig.velocity.y);
-                }
             }
             else
             {
-                if (Input.GetAxisRaw("Horizontal") > 0)
-                {
-                    Rig.velocity = new Vector2(Mathf.SmoothDamp(Rig.velocity.x, WalkSpeed * Time.fixedDeltaTime * 30, ref velocityX, AccelerateTime), Rig.velocity.y);
-                    //SmoothDamp四个参数分别为：当前速度，目标速度，加速度，用多长时间从0达到目标速度
-                }
-                else if (Input.GetAxisRaw("Horizontal") < 0)
-                {
-                    Rig.velocity = new Vector2(Mathf.SmoothDamp(Rig.velocity.x, WalkSpeed * Time.fixedDeltaTime * -30, ref velocityX, AccelerateTime), Rig.velocity.y);
-                }
-                else
-                {
-                    Rig.velocity = new Vector2(Mathf.SmoothDamp(Rig.velocity.x, 0, ref velocityX, DecelerateTime), Rig.velocity.y);
-                }
+                Rig.velocity = new Vector2(Mathf.SmoothDamp(Rig.velocity.x, 0, ref velocityX, DecelerateTime), Rig.velocity.y);
             }
+            //else
+            //{
+            //    if (Input.GetAxisRaw("Horizontal") > 0)
+            //    {
+            //        Rig.velocity = new Vector2(Mathf.SmoothDamp(Rig.velocity.x, WalkSpeed * Time.fixedDeltaTime * 30, ref velocityX, AccelerateTime), Rig.velocity.y);
+            //        //SmoothDamp四个参数分别为：当前速度，目标速度，加速度，用多长时间从0达到目标速度
+            //    }
+            //    else if (Input.GetAxisRaw("Horizontal") < 0)
+            //    {
+            //        Rig.velocity = new Vector2(Mathf.SmoothDamp(Rig.velocity.x, WalkSpeed * Time.fixedDeltaTime * -30, ref velocityX, AccelerateTime), Rig.velocity.y);
+            //    }
+            //    else
+            //    {
+            //        Rig.velocity = new Vector2(Mathf.SmoothDamp(Rig.velocity.x, 0, ref velocityX, DecelerateTime), Rig.velocity.y);
+            //    }
+            //}
         }
         #endregion
 
-        #region 跳跃
-        if (CanJump)
-        {
-            if (Input.GetAxis("Jump") == 1 && !IsJumping && IsOnGround)
-            {
-                Rig.velocity = new Vector2(Rig.velocity.x, JumpingSpeed);
-                IsJumping = true;
-            }
-            if (IsOnGround && Input.GetAxis("Jump") == 0)
-            {
-                IsJumping = false;
-            }
-        }
-        #endregion
+        
 
         #region 重力调整器
         if (GravityModifier)
         {
             if (Rig.velocity.y < 0)    //当玩家下坠的时候
             {
-                Rig.velocity += Vector2.up * Physics2D.gravity.y * (FallMultiplier - 1) * Time.fixedDeltaTime;
+                Rig.velocity += Vector2.up * Physics2D.gravity.y * (FallMultiplier - 1) * Time.fixedDeltaTime * 1.5f;
             }
             else if (Rig.velocity.y > 0 && Input.GetAxis("Jump") != 1)       //当玩家松开跳跃键的时候
             {
-                Rig.velocity += Vector2.up * Physics2D.gravity.y * (LowJumpMultiplier - 1) * Time.fixedDeltaTime;
+                Rig.velocity += Vector2.up * Physics2D.gravity.y * (LowJumpMultiplier - 1) * Time.fixedDeltaTime * 1.5f;
             }
         }
         #endregion
@@ -226,7 +240,8 @@ public class PlayerCTRL : MonoBehaviour
         CanMove = true;
         CanJump = true;
         GravityModifier = true;
-        Rig.gravityScale = 1;
+        Rig.gravityScale = 5;
+        Rig.drag = 0.5f;
     }
     //IEnumerator OnTheWall()
     //{
@@ -261,7 +276,8 @@ public class PlayerCTRL : MonoBehaviour
         CanMove = true;
         CanJump = true;
         GravityModifier = true;
-        Rig.gravityScale = 1;
+        Rig.gravityScale = 5;
+        
     }
 
     bool OnGround()
