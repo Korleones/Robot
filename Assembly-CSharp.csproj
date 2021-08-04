@@ -64,15 +64,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\BasicMovement\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs" />
-    <Compile Include="Assets\BasicMovement\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs" />
-    <Compile Include="Assets\BasicMovement\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs" />
-    <Compile Include="Assets\BasicMovement\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs" />
-    <Compile Include="Assets\BasicMovement\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs" />
-    <Compile Include="Assets\BasicMovement\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
-    <Compile Include="Assets\BasicMovement\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs" />
-    <Compile Include="Assets\BasicMovement\Scripts\PlayerCTRL.cs" />
-    <None Include="Assets\BasicMovement\Plugins\Demigiant\DOTween\readme.txt" />
+    <Compile Include="Assets\BasicMovement-Aoi\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\Scripts\EventManager.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\Scripts\HPCTRL.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\Scripts\PlayerCTRL.cs" />
+    <Compile Include="Assets\Hero Knight - Pixel Art\ColorSwap\ColorSwap_HeroKnight.cs" />
+    <Compile Include="Assets\Hero Knight - Pixel Art\Demo\DestroyEvent_HeroKnight.cs" />
+    <Compile Include="Assets\Hero Knight - Pixel Art\Demo\HeroKnight.cs" />
+    <Compile Include="Assets\Hero Knight - Pixel Art\Demo\Sensor_HeroKnight.cs" />
+    <None Include="Assets\BasicMovement-Aoi\Plugins\Demigiant\DOTween\readme.txt" />
+    <None Include="Assets\Hero Knight - Pixel Art\ColorSwap\Sprites-ColorSwap.shader" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.21f1c1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -257,7 +264,7 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.21f1c1/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
     <Reference Include="DOTween">
-      <HintPath>D:/文件夹/Unity/111/GitHub/Robot/Assets/BasicMovement/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
+      <HintPath>D:/文件夹/Unity/111/GitHub/Robot/Assets/BasicMovement-Aoi/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.21f1c1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
