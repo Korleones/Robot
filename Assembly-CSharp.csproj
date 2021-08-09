@@ -64,6 +64,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\BasicMovement-Aoi\Hero Knight - Pixel Art\ColorSwap\ColorSwap_HeroKnight.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\Hero Knight - Pixel Art\Demo\DestroyEvent_HeroKnight.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\Hero Knight - Pixel Art\Demo\HeroKnight.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\Hero Knight - Pixel Art\Demo\Sensor_HeroKnight.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\PlayerScripts\EventManager.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\PlayerScripts\HPCTRL.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\PlayerScripts\PlayerCTRL.cs" />
     <Compile Include="Assets\BasicMovement-Aoi\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs" />
     <Compile Include="Assets\BasicMovement-Aoi\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs" />
     <Compile Include="Assets\BasicMovement-Aoi\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs" />
@@ -71,15 +78,13 @@
     <Compile Include="Assets\BasicMovement-Aoi\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs" />
     <Compile Include="Assets\BasicMovement-Aoi\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
     <Compile Include="Assets\BasicMovement-Aoi\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs" />
-    <Compile Include="Assets\BasicMovement-Aoi\Scripts\EventManager.cs" />
-    <Compile Include="Assets\BasicMovement-Aoi\Scripts\HPCTRL.cs" />
-    <Compile Include="Assets\BasicMovement-Aoi\Scripts\PlayerCTRL.cs" />
-    <Compile Include="Assets\Hero Knight - Pixel Art\ColorSwap\ColorSwap_HeroKnight.cs" />
-    <Compile Include="Assets\Hero Knight - Pixel Art\Demo\DestroyEvent_HeroKnight.cs" />
-    <Compile Include="Assets\Hero Knight - Pixel Art\Demo\HeroKnight.cs" />
-    <Compile Include="Assets\Hero Knight - Pixel Art\Demo\Sensor_HeroKnight.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\TerrainScripts\Mirror.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\TerrainScripts\MovablePlatform.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\TerrainScripts\Platform.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\TerrainScripts\ReversiblThorn.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\TerrainScripts\Thorn.cs" />
     <None Include="Assets\BasicMovement-Aoi\Plugins\Demigiant\DOTween\readme.txt" />
-    <None Include="Assets\Hero Knight - Pixel Art\ColorSwap\Sprites-ColorSwap.shader" />
+    <None Include="Assets\BasicMovement-Aoi\Hero Knight - Pixel Art\ColorSwap\Sprites-ColorSwap.shader" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.21f1c1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
