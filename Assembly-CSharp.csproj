@@ -68,7 +68,11 @@
     <Compile Include="Assets\BasicMovement-Aoi\Hero Knight - Pixel Art\Demo\DestroyEvent_HeroKnight.cs" />
     <Compile Include="Assets\BasicMovement-Aoi\Hero Knight - Pixel Art\Demo\HeroKnight.cs" />
     <Compile Include="Assets\BasicMovement-Aoi\Hero Knight - Pixel Art\Demo\Sensor_HeroKnight.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\PlayerScripts\AllHpCTRL.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\PlayerScripts\AttackCTRL.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\PlayerScripts\AttackTest.cs" />
     <Compile Include="Assets\BasicMovement-Aoi\PlayerScripts\EventManager.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\PlayerScripts\GetDamage.cs" />
     <Compile Include="Assets\BasicMovement-Aoi\PlayerScripts\HPCTRL.cs" />
     <Compile Include="Assets\BasicMovement-Aoi\PlayerScripts\PlayerCTRL.cs" />
     <Compile Include="Assets\BasicMovement-Aoi\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs" />

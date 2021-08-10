@@ -5,6 +5,15 @@ using DG.Tweening;
 
 public class PlayerCTRL : MonoBehaviour
 {
+    public bool canGetDamage = true;
+    public bool isDamaging = false;
+    public float GDMaxForce;
+    public float GDDuration;
+    public float GDForce;
+    public float GDWaitTime;
+    public float IneffectiveTime;
+    Vector2 GDDir;
+
     [Header("移动")]
     public float WalkSpeed;
     public float AccelerateTime;
@@ -27,6 +36,7 @@ public class PlayerCTRL : MonoBehaviour
     public float DashMaxForce;
     public float DashDuration;
     public float DashWaitTime;
+    public bool IsDashing = false;
     bool WasDashed;
     Vector2 DashingDir;
     [Header("爬墙")]
@@ -77,8 +87,10 @@ public class PlayerCTRL : MonoBehaviour
     {
         Rig.gravityScale = gravityScale;
     }
+    
     private void Update()
     {
+        #region 初始化
         if (Input.GetAxisRaw("Horizontal") > 0 && !IsClimbing)
         {
             FaceToRight = 1;
@@ -112,13 +124,15 @@ public class PlayerCTRL : MonoBehaviour
             ClimbingAccelerateTimer = 0f;
             IsClimbing = false;
         }
+        #endregion
 
         #region 爬墙细节优化：下落加速
-        if(ClimbingAccelerateTimerOpen)
+        if (ClimbingAccelerateTimerOpen)
         {
             ClimbingAccelerateTimer += Time.deltaTime;
         }
         #endregion
+
         #region 跳跃手感优化
         if (JumpingTimerOpen)
         {
@@ -135,6 +149,7 @@ public class PlayerCTRL : MonoBehaviour
 
         }
         #endregion
+        
         #region 爬墙
         if (IsClimbing && Input.GetAxis("Vertical") >= 0)
         {
@@ -204,8 +219,6 @@ public class PlayerCTRL : MonoBehaviour
         }
         #endregion
 
-
-
         #region 爬墙跳
         if (Input.GetButtonDown("Jump") && IsClimbing)
         {
@@ -242,14 +255,23 @@ public class PlayerCTRL : MonoBehaviour
         }
         #endregion
 
+    }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Enemy"))
+        {
+            GetDamage();
+        }
     }
     void FixedUpdate()
     {
+        #region 初始化
         m_animator.SetFloat("VelocityX", Rig.velocity.x);
         m_animator.SetFloat("VelocityY", Rig.velocity.y);
         m_animator.SetInteger("Horizontal", (int)Input.GetAxisRaw("Horizontal"));
         m_animator.SetInteger("Vertical", (int)Input.GetAxisRaw("Vertical"));
+        #endregion
 
         #region 左右移动
         if (CanMove) 
@@ -325,12 +347,22 @@ public class PlayerCTRL : MonoBehaviour
         }
         #endregion
 
-
-
+        #region 玩家受伤
+        if(canGetDamage)
+        {
+            if(Input.GetKeyDown(KeyCode.P))
+            {
+                GetDamage();
+            }
+        }
+        #endregion
     }
+    
+    
 
     IEnumerator Dash()
     {
+        IsDashing = true;
         //关闭玩家的移动和跳跃的功能
         CanMove = false;
         CanJump = false;
@@ -347,6 +379,7 @@ public class PlayerCTRL : MonoBehaviour
         CanJump = true;
         GravityModifier = true;
         Rig.gravityScale = gravityScale;
+        IsDashing = false;
     }
     IEnumerator ClimbingJump()
     {
@@ -369,6 +402,43 @@ public class PlayerCTRL : MonoBehaviour
         Rig.gravityScale = gravityScale;
         m_animator.SetBool("ClimbingJump", false);
         
+    }
+    IEnumerator GetDamageIE()
+    {
+        m_animator.SetBool("Hurt", true);
+        //关闭玩家的移动和跳跃的功能
+        CanMove = false;
+        CanJump = false;
+        //关闭重力调整器
+        GravityModifier = false;
+        //关闭重力影响
+        Rig.gravityScale = 0;
+        //施加空气阻力(Rigidbody.Drag)
+        DOVirtual.Float(GDMaxForce, 0, GDDuration, (x) => Rig.drag = x);
+        //等待一段时间
+        yield return new WaitForSeconds(GDWaitTime);
+        //开启所有关闭的东西
+        CanMove = true;
+        CanJump = true;
+        GravityModifier = true;
+        Rig.gravityScale = gravityScale;
+        yield return new WaitForSeconds(IneffectiveTime);
+        isDamaging = false;
+        m_animator.SetBool("Hurt", false);
+    }
+
+    public void GetDamage()
+    {
+        if (!isDamaging)
+        {
+            isDamaging = true;
+            GDDir = new Vector2(-FaceToRight, 1);
+            //将玩家当前所有的动量清零
+            Rig.velocity = Vector2.zero;
+            //施加一个力，让玩家飞出去
+            Rig.velocity += GDDir * GDForce;
+            StartCoroutine(GetDamageIE());
+        }
     }
 
     bool OnGround()
