@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1321760292}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0.6, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.4, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 4931904189454488989}
@@ -41,10 +41,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.47477245, y: 0.9857211}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -55,7 +55,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.2228155, y: 1.043257}
   m_EdgeRadius: 0
 --- !u!1 &4931904189454488985
 GameObject:
@@ -71,6 +71,7 @@ GameObject:
   - component: {fileID: 4931904189454488979}
   - component: {fileID: 6667068485993442926}
   - component: {fileID: 827601059}
+  - component: {fileID: 188485621}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -157,10 +158,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canGetDamage: 1
   isDamaging: 0
-  GDMaxForce: 0
-  GDDuration: 0
-  GDForce: 0
-  GDWaitTime: 0
+  GDMaxForce: 8
+  GDDuration: 0.77
+  GDForce: 10
+  GDWaitTime: 0.3
+  IneffectiveTime: 0.5
   WalkSpeed: 6
   AccelerateTime: 0.04
   DecelerateTime: 0.06
@@ -169,7 +171,7 @@ MonoBehaviour:
   LowJumpMultiplier: 2.5
   advancedTime: 0.005
   CanJump: 1
-  gravityScale: 3
+  gravityScale: 2.7
   PointOffset: {x: 0, y: 0.25}
   GroundSize: {x: 0.7, y: 0.8}
   GroundLayerMask:
@@ -178,7 +180,7 @@ MonoBehaviour:
   DashForce: 19
   DashMaxForce: 8
   DashDuration: 0.77
-  DashWaitTime: 0.3
+  DashWaitTime: 0.2
   IsDashing: 0
   LeftWallPointOffset: {x: -0.12, y: 0.65}
   RightWallPointOffset: {x: 0.12, y: 0.65}
@@ -258,3 +260,30 @@ CapsuleCollider2D:
   m_Offset: {x: -0.008364934, y: 0.62390107}
   m_Size: {x: 0.7834347, y: 1.1956468}
   m_Direction: 0
+--- !u!114 &188485621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4931904189454488985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39b9346239bc5ab43a41675a27fd0665, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  canAttack: 1
+  AttackDuration: 0.4
+  IsOnGround: 0
+  IsClimbing: 0
+  IsDashing: 0
+  upvec: {x: 0.78, y: 0.3, z: 0}
+  upqua: {x: 0, y: 0, z: 90}
+  downvec: {x: -0.78, y: 0.5, z: 0}
+  downqua: {x: 0, y: 0, z: -90}
+  UpEffection: -5
+  DownEffection: 5
+  LeftEffection: 0
+  RightEffection: 0
+  count: 0
