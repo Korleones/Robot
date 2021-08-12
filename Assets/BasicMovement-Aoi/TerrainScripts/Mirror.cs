@@ -5,8 +5,10 @@ using UnityEngine;
 public class Mirror : Platform
 {
     public float resetTime;
+    public float bufferTime;
     float Timer = 0f;
     bool TimerOpen = false;
+    bool isBroken = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,19 +25,25 @@ public class Mirror : Platform
         if(TimerOpen)
         {
             Timer += Time.fixedDeltaTime;
-            if(Timer > resetTime)
+            if (!isBroken && Timer > bufferTime)
             {
+                GetComponent<MeshRenderer>().enabled = false;
+                GetComponent<BoxCollider2D>().enabled = false;
+                isBroken = true;
+                Timer = 0;
+            }
+            if (isBroken && Timer > resetTime)
+            {
+                isBroken = false;
                 TimerOpen = false;
                 Timer = 0;
-                GetComponent<SpriteRenderer>().enabled = true;
+                GetComponent<MeshRenderer>().enabled = true;
                 GetComponent<BoxCollider2D>().enabled = true;
             }
         }
     }
     public void Break()
     {
-        GetComponent<SpriteRenderer>().enabled = false;
-        GetComponent<BoxCollider2D>().enabled = false;
         TimerOpen = true;
     }
 }

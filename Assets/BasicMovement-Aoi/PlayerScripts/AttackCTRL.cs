@@ -68,7 +68,8 @@ public class AttackCTRL : MonoBehaviour
 
     public void Attack()
     {
-        if (Input.GetButtonDown("Attack") && !IsDashing) {//按键且不在冲刺
+        if (Input.GetButtonDown("Attack") && !IsDashing && !Anim.GetBool("Attack"))  
+        {//按键且不在冲刺
             #region 在地上
             if (IsOnGround) {
                 
@@ -80,11 +81,12 @@ public class AttackCTRL : MonoBehaviour
                 {
                     Anim.SetBool("Attack", true);       //设置动画播放
                 }
-
+                
             }
             #endregion
             #region 在空中 
-            else if (!IsOnGround&&!IsClimbing) {
+            else if (!IsOnGround&&!IsClimbing) 
+            {
 
                 if (Input.GetAxisRaw("Vertical") > 0)
                 {
@@ -153,6 +155,7 @@ public class AttackCTRL : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             collision.GetComponent<AllHpCTRL>().TakeDamage(damage);
+            GetComponent<PlayerCTRL>().WasDashed = false;
             if(Input.GetAxisRaw("Vertical") < 0)
             {
                 Rig.velocity = new Vector2(Rig.velocity.x, DownEffection);
@@ -161,6 +164,10 @@ public class AttackCTRL : MonoBehaviour
             {
                 Rig.velocity = new Vector2(Rig.velocity.x, Rig.velocity.y + UpEffection);
             }
+        }
+        if (collision.gameObject.CompareTag("ReversibleThorn"))
+        {
+            collision.gameObject.GetComponent<ReversiblThorn>().Refresh();
         }
     }
 

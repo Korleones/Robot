@@ -75,6 +75,7 @@
     <Compile Include="Assets\BasicMovement-Aoi\PlayerScripts\GetDamage.cs" />
     <Compile Include="Assets\BasicMovement-Aoi\PlayerScripts\HPCTRL.cs" />
     <Compile Include="Assets\BasicMovement-Aoi\PlayerScripts\PlayerCTRL.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\PlayerScripts\RigCTRL.cs" />
     <Compile Include="Assets\BasicMovement-Aoi\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs" />
     <Compile Include="Assets\BasicMovement-Aoi\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs" />
     <Compile Include="Assets\BasicMovement-Aoi\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs" />

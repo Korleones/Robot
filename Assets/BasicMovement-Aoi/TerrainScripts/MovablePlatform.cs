@@ -9,7 +9,6 @@ public class MovablePlatform : Platform
     public bool circle;         //是否循环移动
     public float movingSpeed;
 
-    Rigidbody2D Rig;
     int direction;      //定义移动的方向
     int startPoint;     //当前位移路径中的起点
     int endPoint;       //当前位移路径中的终点
@@ -20,7 +19,6 @@ public class MovablePlatform : Platform
     // Start is called before the first frame update
     void Start()
     {
-        Rig = GetComponent<Rigidbody2D>();
         direction = 1;
         pointNum = point.Length;
         transform.position = point[0];
