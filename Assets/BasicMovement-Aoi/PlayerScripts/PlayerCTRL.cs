@@ -5,6 +5,8 @@ using DG.Tweening;
 
 public class PlayerCTRL : MonoBehaviour
 {
+    public static PlayerCTRL Player;
+
     public bool canGetDamage = true;
     public bool isDamaging = false;
     public float GDMaxForce;
@@ -37,7 +39,7 @@ public class PlayerCTRL : MonoBehaviour
     public float DashDuration;
     public float DashWaitTime;
     public bool IsDashing = false;
-    bool WasDashed;
+    public bool WasDashed;
     Vector2 DashingDir;
     [Header("爬墙")]
     public Vector2 LeftWallPointOffset;
@@ -75,6 +77,7 @@ public class PlayerCTRL : MonoBehaviour
     public int LatestCJStatus = 0;
     public bool isCJumped = false;   //用于记录上一刻在右墙还是左墙滑落
     bool canCJump = true;
+    bool onMoveablePlatform = false;
     Animator m_animator;
 
 
@@ -82,6 +85,7 @@ public class PlayerCTRL : MonoBehaviour
     {
         Rig = GetComponent<Rigidbody2D>();
         m_animator = GetComponent<Animator>();
+        Player = this;
     }
     private void Start()
     {
@@ -347,15 +351,6 @@ public class PlayerCTRL : MonoBehaviour
         }
         #endregion
 
-        #region 玩家受伤
-        if(canGetDamage)
-        {
-            if(Input.GetKeyDown(KeyCode.P))
-            {
-                GetDamage();
-            }
-        }
-        #endregion
     }
     
     
@@ -437,6 +432,7 @@ public class PlayerCTRL : MonoBehaviour
             Rig.velocity = Vector2.zero;
             //施加一个力，让玩家飞出去
             Rig.velocity += GDDir * GDForce;
+            GetComponent<AllHpCTRL>().TakeDamage(1);
             StartCoroutine(GetDamageIE());
         }
     }
@@ -452,10 +448,33 @@ public class PlayerCTRL : MonoBehaviour
             //CanMove = true;
             m_animator.SetBool("IsOnGround", true);
             IsWallJumping = 0;
+            BreakMirror(Coll);
+            if (!onMoveablePlatform && Coll.gameObject.CompareTag("MoveablePlatform"))
+            {
+                Debug.Log(1);
+                this.transform.parent = Coll.gameObject.transform;
+                onMoveablePlatform = true;
+            }
+            if (onMoveablePlatform && !Coll.gameObject.CompareTag("MoveablePlatform"))
+            {
+                Debug.Log(2);
+                this.transform.parent = null;
+                onMoveablePlatform = false;
+            }
+            if(Coll.gameObject.CompareTag("ReversibleThorn"))
+            {
+                Coll.gameObject.GetComponent<ReversiblThorn>().TurnOver();
+            }
             return true;
         }
         else
         {
+            if(onMoveablePlatform)
+            {
+                Debug.Log(3);
+                this.transform.parent = null;
+                onMoveablePlatform = false;
+            }
             m_animator.SetBool("IsOnGround", false);
             return false;
         }
@@ -494,6 +513,13 @@ public class PlayerCTRL : MonoBehaviour
         else
         {
             return false;
+        }
+    }
+    void BreakMirror(Collider2D Coll)
+    { 
+        if(Coll != null &&  Coll.gameObject.CompareTag("Mirror"))
+        {
+            Coll.GetComponent<Mirror>().Break();
         }
     }
     private void OnDrawGizmos()
