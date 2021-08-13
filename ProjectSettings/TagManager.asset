@@ -6,6 +6,9 @@ TagManager:
   tags:
   - PlayerAttackRegion
   - Enemy
+  - Mirror
+  - MoveablePlatform
+  - ReversibleThorn
   layers:
   - Default
   - TransparentFX

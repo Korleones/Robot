@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Levels-kd/1/1-1/1-1-1.unity
+- path: Assets/Levels-kd-new/0/0-1(2).unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

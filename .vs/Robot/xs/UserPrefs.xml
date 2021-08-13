@@ -1,13 +1,14 @@
 ﻿<Properties StartupConfiguration="{E7A24A7F-1C0A-CD74-A8B0-B26137CF313C}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/BasicMovement-Aoi/PlayerScripts/PlayerCTRL.cs">
     <Files>
-      <File FileName="Assets/Levels-kd/Asset/Ruccho/FangAutoTile/FangAutoTile.cs" Line="211" Column="1" />
-      <File FileName="Assets/BasicMovement-Aoi/PlayerScripts/PlayerCTRL.cs" Line="86" Column="8" />
+      <File FileName="Assets/Levels-kd/ScenesShift/LevelLoader.cs" Line="21" Column="56" />
+      <File FileName="Assets/BasicMovement-Aoi/PlayerScripts/PlayerCTRL.cs" Line="187" Column="41" />
+      <File FileName="Assets/BasicMovement-Aoi/PlayerScripts/AttackCTRL.cs" Line="155" Column="33" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="fb046751-f209-489a-87f4-0d6b19b4a9cb" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="05a87371-76bc-461a-8382-dd3b6566f862" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

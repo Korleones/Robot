@@ -28,6 +28,7 @@ public class PlayerCTRL : MonoBehaviour
     public float advancedTime;
     public bool CanJump = true;
     public float gravityScale;
+    public float fallGravityScale;
     [Header("触地判定")]
     public Vector2 PointOffset;
     public Vector2 GroundSize;
@@ -58,6 +59,10 @@ public class PlayerCTRL : MonoBehaviour
     public float ClimbingJumpWaitTime;
     public Vector2 ClimbingJumpSpeed;
     public float CJOffsetTime;
+    [Header("狼跳")]
+    bool wolfJumpSwitch = false;
+    float wolfJumpTimeCount;
+    public float wolfJumpOffset;
     [Header("测试，请勿修改或调用")]
     int FaceToRight = 1;
     Rigidbody2D Rig;
@@ -104,6 +109,10 @@ public class PlayerCTRL : MonoBehaviour
         {
             FaceToRight = -1;
             transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+        }
+        if(IsOnGround && !OnGround())
+        {
+            wolfJumpSwitch = true;
         }
         IsOnGround = OnGround();     //判断当前角色是否碰到地面
         IsBesideRightWall = BesideRightWall();    //判断当前角色是否碰到右边的墙
@@ -153,20 +162,29 @@ public class PlayerCTRL : MonoBehaviour
 
         }
         #endregion
-        
+
         #region 爬墙
         if (IsClimbing && Input.GetAxis("Vertical") >= 0)
         {
-            if (Rig.velocity.y < 0)
+            if (Rig.velocity.y < 0 && (IsBesideLeftWall && Input.GetAxisRaw("Horizontal") < 0 || IsBesideRightWall && Input.GetAxisRaw("Horizontal") > 0)) 
             {
-                ClimbingAccelerateTimerOpen = true;
-                if(ClimbingAccelerateTimer >= 0.5f)
-                {
-                    Rig.velocity = new Vector2(Rig.velocity.x, -WallVelocity * ClimbingAccelerateTimer * ClimbingAccelerateTimer * 4f);
-                }
-                else 
-                    Rig.velocity = new Vector2(Rig.velocity.x, -WallVelocity);
+                //ClimbingAccelerateTimerOpen = true;
+                //if(ClimbingAccelerateTimer >= 0.5f)
+                //{
+                //    Rig.velocity = new Vector2(Rig.velocity.x, -WallVelocity * ClimbingAccelerateTimer * ClimbingAccelerateTimer * 4f);
+                //}
+                //else 
+                Rig.velocity = new Vector2(Rig.velocity.x, -WallVelocity);
+                m_animator.SetBool("IsWallSlide", true);
             }
+            else
+            {
+                m_animator.SetBool("IsWallSlide", false);
+            }
+        }
+        else
+        {
+            m_animator.SetBool("IsWallSLide", false);
         }
         #endregion
 
@@ -259,6 +277,36 @@ public class PlayerCTRL : MonoBehaviour
         }
         #endregion
 
+        #region 狼跳
+        if (wolfJumpSwitch)
+        {
+            wolfJumpTimeCount += Time.deltaTime;
+            if(wolfJumpTimeCount > wolfJumpOffset)
+            {
+                wolfJumpTimeCount = 0;
+                wolfJumpSwitch = false;
+            }
+            if (Input.GetButtonDown("Jump") && !IsJumping)
+            {
+                Rig.velocity = new Vector2(Rig.velocity.x / 10f, JumpingSpeed);
+                wolfJumpSwitch = false;
+                wolfJumpTimeCount = 0;
+            }
+
+        }
+
+        #endregion
+
+        if (Rig.velocity.y >= 0)
+        {
+            Rig.gravityScale = gravityScale;
+        }
+        else
+        {
+            Rig.gravityScale = fallGravityScale;
+            
+        }
+        Debug.Log(Rig.gravityScale);
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -451,13 +499,11 @@ public class PlayerCTRL : MonoBehaviour
             BreakMirror(Coll);
             if (!onMoveablePlatform && Coll.gameObject.CompareTag("MoveablePlatform"))
             {
-                Debug.Log(1);
                 this.transform.parent = Coll.gameObject.transform;
                 onMoveablePlatform = true;
             }
             if (onMoveablePlatform && !Coll.gameObject.CompareTag("MoveablePlatform"))
             {
-                Debug.Log(2);
                 this.transform.parent = null;
                 onMoveablePlatform = false;
             }
@@ -471,7 +517,6 @@ public class PlayerCTRL : MonoBehaviour
         {
             if(onMoveablePlatform)
             {
-                Debug.Log(3);
                 this.transform.parent = null;
                 onMoveablePlatform = false;
             }

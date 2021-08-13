@@ -69,10 +69,10 @@ GameObject:
   - component: {fileID: 4931904189454488990}
   - component: {fileID: 4931904189454488991}
   - component: {fileID: 4931904189454488979}
-  - component: {fileID: 827601059}
   - component: {fileID: 188485621}
   - component: {fileID: 1049101804}
   - component: {fileID: 1895605103}
+  - component: {fileID: 1744546635}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -164,15 +164,16 @@ MonoBehaviour:
   GDForce: 10
   GDWaitTime: 0.3
   IneffectiveTime: 0.5
-  WalkSpeed: 6
+  WalkSpeed: 7
   AccelerateTime: 0.04
   DecelerateTime: 0.06
-  JumpingSpeed: 12
-  FallMultiplier: 3.6
+  JumpingSpeed: 11.3
+  FallMultiplier: 3
   LowJumpMultiplier: 2.5
   advancedTime: 0.005
   CanJump: 1
-  gravityScale: 2.6
+  gravityScale: 3.5
+  fallGravityScale: 2
   PointOffset: {x: 0, y: 0.25}
   GroundSize: {x: 0.7, y: 0.8}
   GroundLayerMask:
@@ -184,12 +185,12 @@ MonoBehaviour:
   DashWaitTime: 0.2
   IsDashing: 0
   WasDashed: 0
-  LeftWallPointOffset: {x: -0.12, y: 0.65}
-  RightWallPointOffset: {x: 0.12, y: 0.65}
+  LeftWallPointOffset: {x: -0.12, y: 1}
+  RightWallPointOffset: {x: 0.12, y: 1}
   WallLayerMask:
     serializedVersion: 2
     m_Bits: 256
-  WallSize: {x: 1, y: 0.7}
+  WallSize: {x: 0.7, y: 0.3}
   WallWaitTime: 5
   WallVelocity: 0.4
   WallAccelerateTime: 0.1
@@ -199,13 +200,14 @@ MonoBehaviour:
   ClimbingJumpDuration: 0.77
   ClimbingJumpWaitTime: 0.1
   ClimbingJumpSpeed: {x: 1, y: 1}
-  CJOffsetTime: 0.1
+  CJOffsetTime: 0.2
+  wolfJumpOffset: 0.05
   IsOnGround: 0
   IsJumping: 0
   IsClimbing: 0
   IsWallJumping: 0
   LatestCJStatus: 0
-  isCJumped: 0
+  isCJumped: 1
 --- !u!95 &4931904189454488979
 Animator:
   serializedVersion: 3
@@ -225,22 +227,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!70 &827601059
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4931904189454488985}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: 102694731a637f349950e90a828eff62, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.008364934, y: 0.62390107}
-  m_Size: {x: 0.7834347, y: 1.1956468}
-  m_Direction: 0
 --- !u!114 &188485621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,7 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08bed919ca85a0949979f164da44bbe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 5
+  MaxHp: 1000000000
   MaxMp: 0
   CurHp: 0
   CurMp: 0
@@ -306,3 +292,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!70 &1744546635
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4931904189454488985}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 102694731a637f349950e90a828eff62, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.7}
+  m_Size: {x: 0.7, y: 1.2}
+  m_Direction: 0
