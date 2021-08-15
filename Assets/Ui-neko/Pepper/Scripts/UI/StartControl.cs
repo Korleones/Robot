@@ -18,7 +18,7 @@ public class StartControl : MonoBehaviour
     IEnumerator wait()
     {
         Time.timeScale = 1;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0f);
         
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }

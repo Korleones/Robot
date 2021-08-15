@@ -154,7 +154,7 @@ public class AttackCTRL : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            collision.GetComponent<AllHpCTRL>().TakeDamage(damage);
+         //   collision.GetComponent<AllHpCTRL>().TakeDamage(damage);
             GetComponent<PlayerCTRL>().WasDashed = false;
             if(Input.GetAxisRaw("Vertical") < 0)
             {

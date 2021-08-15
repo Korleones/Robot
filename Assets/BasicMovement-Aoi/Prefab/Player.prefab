@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 1744546635}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -162,9 +162,9 @@ MonoBehaviour:
   GDMaxForce: 8
   GDDuration: 0.77
   GDForce: 10
-  GDWaitTime: 0.3
+  GDWaitTime: 3.09
   IneffectiveTime: 0.5
-  WalkSpeed: 7
+  WalkSpeed: 6.5
   AccelerateTime: 0.04
   DecelerateTime: 0.06
   JumpingSpeed: 11.3
@@ -195,7 +195,7 @@ MonoBehaviour:
   WallVelocity: 0.4
   WallAccelerateTime: 0.1
   holdingTimeOffset: 0
-  ClimbingJumpForce: 19
+  ClimbingJumpForce: 24.15
   ClimbingJumpMaxForce: 8
   ClimbingJumpDuration: 0.77
   ClimbingJumpWaitTime: 0.1
@@ -266,11 +266,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08bed919ca85a0949979f164da44bbe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 1000000000
+  MaxHp: 1
   MaxMp: 0
   CurHp: 0
   CurMp: 0
   IsDead: 0
+  restartOffsetTime: 0.7
+  Anim: {fileID: 4931904189454488979}
 --- !u!50 &1895605103
 Rigidbody2D:
   serializedVersion: 4

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelLoader : MonoBehaviour
 {
     Animator ParentAnim;
-    public float transitionTime = 1f;
+    public float transitionTime;
     private void Start()
     {
         ParentAnim = GameObject.FindGameObjectWithTag("Transition").GetComponent<Animator>();
@@ -34,6 +34,7 @@ public class LevelLoader : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            collision.gameObject.SetActive(false);
             LoadNextLevel();
 
         }

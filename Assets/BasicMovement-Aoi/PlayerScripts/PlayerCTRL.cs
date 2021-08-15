@@ -96,7 +96,7 @@ public class PlayerCTRL : MonoBehaviour
     {
         Rig.gravityScale = gravityScale;
     }
-    
+
     private void Update()
     {
         #region 初始化
@@ -110,22 +110,22 @@ public class PlayerCTRL : MonoBehaviour
             FaceToRight = -1;
             transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }
-        if(IsOnGround && !OnGround())
+        if (IsOnGround && !OnGround())
         {
             wolfJumpSwitch = true;
         }
         IsOnGround = OnGround();     //判断当前角色是否碰到地面
         IsBesideRightWall = BesideRightWall();    //判断当前角色是否碰到右边的墙
         IsBesideLeftWall = BesideLeftWall();    //判断当前角色是否碰到左边的墙
-        if (!IsOnGround && (IsBesideRightWall || IsBesideLeftWall)) 
+        if (!IsOnGround && (IsBesideRightWall || IsBesideLeftWall))
         {
             m_animator.SetBool("Climbing", true);
             IsClimbing = true;
-            if(IsBesideLeftWall)
+            if (IsBesideLeftWall)
             {
                 LatestCJStatus = -1;
             }
-            else if(IsBesideRightWall)
+            else if (IsBesideRightWall)
             {
                 LatestCJStatus = 1;
             }
@@ -150,9 +150,9 @@ public class PlayerCTRL : MonoBehaviour
         if (JumpingTimerOpen)
         {
             JumpingTimer += Time.deltaTime;
-            if(JumpingTimer > advancedTime)
+            if (JumpingTimer > advancedTime)
             {
-                if(IsOnGround)
+                if (IsOnGround)
                 {
                     Rig.velocity = new Vector2(Rig.velocity.x / 10f, JumpingSpeed);
                 }
@@ -166,7 +166,7 @@ public class PlayerCTRL : MonoBehaviour
         #region 爬墙
         if (IsClimbing && Input.GetAxis("Vertical") >= 0)
         {
-            if (Rig.velocity.y < 0 && (IsBesideLeftWall && Input.GetAxisRaw("Horizontal") < 0 || IsBesideRightWall && Input.GetAxisRaw("Horizontal") > 0)) 
+            if (Rig.velocity.y < 0 && (IsBesideLeftWall && Input.GetAxisRaw("Horizontal") < 0 || IsBesideRightWall && Input.GetAxisRaw("Horizontal") > 0))
             {
                 //ClimbingAccelerateTimerOpen = true;
                 //if(ClimbingAccelerateTimer >= 0.5f)
@@ -184,7 +184,7 @@ public class PlayerCTRL : MonoBehaviour
         }
         else
         {
-            m_animator.SetBool("IsWallSLide", false);
+            m_animator.SetBool("IsWallSlide", false);
         }
         #endregion
 
@@ -196,14 +196,14 @@ public class PlayerCTRL : MonoBehaviour
                 ClimbingJumpTimerOpen = true;
                 CanMove = false;
             }
-            else if(Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.A))
+            else if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.A))
             {
                 ClimbingJumpTimerOpen = false;
                 ClimbingJumpTimer = 0;
                 CanMove = true;
             }
         }
-        if (ClimbingJumpTimerOpen) 
+        if (ClimbingJumpTimerOpen)
         {
             ClimbingJumpTimer += Time.deltaTime;
             if (ClimbingJumpTimer > CJOffsetTime)
@@ -251,7 +251,7 @@ public class PlayerCTRL : MonoBehaviour
                 IsWallJumping = 1;
                 ClimbingJumpDir = new Vector2(ClimbingJumpSpeed.x * IsWallJumping, ClimbingJumpSpeed.y);
                 //将玩家当前所有的动量清零
-                Rig.velocity = Vector2.zero; 
+                Rig.velocity = Vector2.zero;
                 //施加一个力，让玩家飞出去
                 Rig.velocity += ClimbingJumpDir * ClimbingJumpForce;
                 //Rig.velocity = new Vector2(Rig.velocity.x / 2, JumpingSpeed);
@@ -270,7 +270,7 @@ public class PlayerCTRL : MonoBehaviour
                 //Rig.velocity = new Vector2(Rig.velocity.x / 2, JumpingSpeed);
                 StartCoroutine(ClimbingJump());
             }
-            else if(canCJump)
+            else if (canCJump)
             {
                 canCJump = false;
             }
@@ -281,7 +281,7 @@ public class PlayerCTRL : MonoBehaviour
         if (wolfJumpSwitch)
         {
             wolfJumpTimeCount += Time.deltaTime;
-            if(wolfJumpTimeCount > wolfJumpOffset)
+            if (wolfJumpTimeCount > wolfJumpOffset)
             {
                 wolfJumpTimeCount = 0;
                 wolfJumpSwitch = false;
@@ -304,14 +304,13 @@ public class PlayerCTRL : MonoBehaviour
         else
         {
             Rig.gravityScale = fallGravityScale;
-            
+
         }
-        Debug.Log(Rig.gravityScale);
     }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy"))
         {
             GetDamage();
         }
@@ -326,7 +325,7 @@ public class PlayerCTRL : MonoBehaviour
         #endregion
 
         #region 左右移动
-        if (CanMove) 
+        if (CanMove)
         {
             if (Input.GetAxisRaw("Horizontal") > 0)
             {
@@ -382,7 +381,7 @@ public class PlayerCTRL : MonoBehaviour
             {
                 DashingDir.x = FaceToRight;
             }
-            if (Input.GetAxis("Vertical") == 0 || Input.GetAxis("Horizontal") == 0) 
+            if (Input.GetAxis("Vertical") == 0 || Input.GetAxis("Horizontal") == 0)
             {
                 DashingDir *= 1.414f;
             }
@@ -400,8 +399,8 @@ public class PlayerCTRL : MonoBehaviour
         #endregion
 
     }
-    
-    
+
+
 
     IEnumerator Dash()
     {
@@ -444,7 +443,7 @@ public class PlayerCTRL : MonoBehaviour
         GravityModifier = true;
         Rig.gravityScale = gravityScale;
         m_animator.SetBool("ClimbingJump", false);
-        
+
     }
     IEnumerator GetDamageIE()
     {
@@ -477,9 +476,9 @@ public class PlayerCTRL : MonoBehaviour
             isDamaging = true;
             GDDir = new Vector2(-FaceToRight, 1);
             //将玩家当前所有的动量清零
-            Rig.velocity = Vector2.zero;
+         //   Rig.velocity = Vector2.zero;
             //施加一个力，让玩家飞出去
-            Rig.velocity += GDDir * GDForce;
+         //   Rig.velocity += GDDir * GDForce;
             GetComponent<AllHpCTRL>().TakeDamage(1);
             StartCoroutine(GetDamageIE());
         }
@@ -507,7 +506,7 @@ public class PlayerCTRL : MonoBehaviour
                 this.transform.parent = null;
                 onMoveablePlatform = false;
             }
-            if(Coll.gameObject.CompareTag("ReversibleThorn"))
+            if (Coll.gameObject.CompareTag("ReversibleThorn"))
             {
                 Coll.gameObject.GetComponent<ReversiblThorn>().TurnOver();
             }
@@ -515,7 +514,7 @@ public class PlayerCTRL : MonoBehaviour
         }
         else
         {
-            if(onMoveablePlatform)
+            if (onMoveablePlatform)
             {
                 this.transform.parent = null;
                 onMoveablePlatform = false;
@@ -561,8 +560,8 @@ public class PlayerCTRL : MonoBehaviour
         }
     }
     void BreakMirror(Collider2D Coll)
-    { 
-        if(Coll != null &&  Coll.gameObject.CompareTag("Mirror"))
+    {
+        if (Coll != null && Coll.gameObject.CompareTag("Mirror"))
         {
             Coll.GetComponent<Mirror>().Break();
         }

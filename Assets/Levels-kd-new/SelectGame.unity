@@ -274,17 +274,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 189863371}
-  m_LocalRotation: {x: -0, y: -0, z: 0.05379013, w: 0.99855226}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.4387116, y: 2.2482817, z: 1.4387115}
   m_Children:
   - {fileID: 497711993}
   m_Father: {fileID: 1515608033}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 6.1670003}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 186.8, y: 66.59998}
+  m_AnchoredPosition: {x: 204.8, y: -8.8}
   m_SizeDelta: {x: 82.6205, y: 20.85817}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &189863373
@@ -336,7 +336,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 24
+          m_IntArgument: 23
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -675,17 +675,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 496217810}
-  m_LocalRotation: {x: -0, y: -0, z: 0.05379013, w: 0.99855226}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.4387116, y: 2.2482817, z: 1.4387115}
   m_Children:
   - {fileID: 423507335}
   m_Father: {fileID: 1515608033}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 6.1670003}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 63.9, y: 51.7}
+  m_AnchoredPosition: {x: 68.2, y: -8}
   m_SizeDelta: {x: 82.6205, y: 20.85817}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &496217812
@@ -737,7 +737,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 20
+          m_IntArgument: 19
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -864,7 +864,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '2-boss
+  m_Text: '2-Boss
 
 '
 --- !u!222 &497711996
@@ -1253,17 +1253,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1259163739}
-  m_LocalRotation: {x: -0, y: -0, z: 0.05379013, w: 0.99855226}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.4387116, y: 2.2482817, z: 1.4387115}
   m_Children:
   - {fileID: 756892600}
   m_Father: {fileID: 1515608033}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 6.1670003}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -55.35, y: 37.739983}
+  m_AnchoredPosition: {x: -64.7, y: -6.1}
   m_SizeDelta: {x: 82.6205, y: 20.85817}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1259163741
@@ -1315,7 +1315,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 16
+          m_IntArgument: 15
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1483,17 +1483,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500352969}
-  m_LocalRotation: {x: -0, y: -0, z: 0.05379013, w: 0.99855226}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.4387116, y: 2.2482817, z: 1.4387115}
   m_Children:
   - {fileID: 2008169325}
   m_Father: {fileID: 1515608033}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 6.1670003}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 178.7, y: 112.1}
+  m_AnchoredPosition: {x: 204.6, y: 58.9}
   m_SizeDelta: {x: 82.6205, y: 20.85817}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1500352971
@@ -1545,7 +1545,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 15
+          m_IntArgument: 14
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1758,17 +1758,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1795177568}
-  m_LocalRotation: {x: -0, y: -0, z: 0.05379013, w: 0.99855226}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.4387116, y: 2.2482817, z: 1.4387115}
   m_Children:
   - {fileID: 1866957530}
   m_Father: {fileID: 1515608033}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 6.1670003}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -69, y: 130}
+  m_AnchoredPosition: {x: -64.7, y: 130}
   m_SizeDelta: {x: 82.6205, y: 20.85817}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1795177570
@@ -1820,7 +1820,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1984,17 +1984,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1879176875}
-  m_LocalRotation: {x: -0, y: -0, z: 0.05379013, w: 0.99855226}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.4387116, y: 2.2482817, z: 1.4387115}
   m_Children:
   - {fileID: 565723838}
   m_Father: {fileID: 1515608033}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 6.1670003}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 55.8, y: 97.2}
+  m_AnchoredPosition: {x: 70.2, y: 58.4}
   m_SizeDelta: {x: 82.6205, y: 20.85817}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1879176877
@@ -2046,7 +2046,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 11
+          m_IntArgument: 10
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2114,17 +2114,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1979681352}
-  m_LocalRotation: {x: -0, y: -0, z: 0.05379013, w: 0.99855226}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.4387116, y: 2.2482817, z: 1.4387115}
   m_Children:
   - {fileID: 1006409302}
   m_Father: {fileID: 1515608033}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 6.1670003}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -63.45, y: 83.24}
+  m_AnchoredPosition: {x: -63.45, y: 60.2}
   m_SizeDelta: {x: 82.6205, y: 20.85817}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1979681354
@@ -2176,7 +2176,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 7
+          m_IntArgument: 6
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2303,7 +2303,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '1-boss
+  m_Text: '1-Boss
 
 '
 --- !u!222 &2008169328
@@ -2340,17 +2340,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2051486274}
-  m_LocalRotation: {x: 0.17304009, y: 0.008286038, z: 0.05059624, w: 0.98357946}
-  m_LocalPosition: {x: 0, y: 0, z: 61}
+  m_LocalRotation: {x: 0.17233106, y: 0.017706906, z: -0.0030983118, w: 0.984875}
+  m_LocalPosition: {x: 0, y: 0, z: 33.3}
   m_LocalScale: {x: 1.4387106, y: 2.2482753, z: 11.09}
   m_Children:
   - {fileID: 458566587}
   m_Father: {fileID: 1515608033}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 19.85, y: 2.06, z: 6.25}
+  m_LocalEulerAnglesHint: {x: 19.85, y: 2.06, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 74, y: -28}
+  m_AnchoredPosition: {x: 73, y: -105}
   m_SizeDelta: {x: 127.87, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2051486276
