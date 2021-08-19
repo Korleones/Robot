@@ -9,6 +9,11 @@ TagManager:
   - Mirror
   - ReversibleThorn
   - MoveablePlatform
+  - LaserShooter
+  - Cryer
+  - Tear
+  - LevelLoader
+  - Transition
   layers:
   - Default
   - TransparentFX
@@ -19,7 +24,7 @@ TagManager:
   - 
   - 
   - Ground
-  - 
+  - Enemy
   - 
   - 
   - 

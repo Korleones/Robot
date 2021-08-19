@@ -64,32 +64,68 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Aoi\Hero Knight - Pixel Art\ColorSwap\ColorSwap_HeroKnight.cs" />
-    <Compile Include="Assets\Aoi\Hero Knight - Pixel Art\Demo\DestroyEvent_HeroKnight.cs" />
-    <Compile Include="Assets\Aoi\Hero Knight - Pixel Art\Demo\HeroKnight.cs" />
-    <Compile Include="Assets\Aoi\Hero Knight - Pixel Art\Demo\Sensor_HeroKnight.cs" />
-    <Compile Include="Assets\Aoi\PlayerScripts\AllHpCTRL.cs" />
-    <Compile Include="Assets\Aoi\PlayerScripts\AttackCTRL.cs" />
-    <Compile Include="Assets\Aoi\PlayerScripts\AttackTest.cs" />
-    <Compile Include="Assets\Aoi\PlayerScripts\EventManager.cs" />
-    <Compile Include="Assets\Aoi\PlayerScripts\GetDamage.cs" />
-    <Compile Include="Assets\Aoi\PlayerScripts\HPCTRL.cs" />
-    <Compile Include="Assets\Aoi\PlayerScripts\PlayerCTRL.cs" />
-    <Compile Include="Assets\Aoi\PlayerScripts\RigCTRL.cs" />
-    <Compile Include="Assets\Aoi\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs" />
-    <Compile Include="Assets\Aoi\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs" />
-    <Compile Include="Assets\Aoi\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs" />
-    <Compile Include="Assets\Aoi\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs" />
-    <Compile Include="Assets\Aoi\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs" />
-    <Compile Include="Assets\Aoi\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
-    <Compile Include="Assets\Aoi\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs" />
-    <Compile Include="Assets\Aoi\TerrainScripts\Mirror.cs" />
-    <Compile Include="Assets\Aoi\TerrainScripts\MovablePlatform.cs" />
-    <Compile Include="Assets\Aoi\TerrainScripts\Platform.cs" />
-    <Compile Include="Assets\Aoi\TerrainScripts\ReversiblThorn.cs" />
-    <Compile Include="Assets\Aoi\TerrainScripts\Thorn.cs" />
-    <None Include="Assets\Aoi\Plugins\Demigiant\DOTween\readme.txt" />
-    <None Include="Assets\Aoi\Hero Knight - Pixel Art\ColorSwap\Sprites-ColorSwap.shader" />
+    <Compile Include="Assets\AI-AHU\Boss1\AttackCTRL_help.cs" />
+    <Compile Include="Assets\AI-AHU\Boss1\Boss1.cs" />
+    <Compile Include="Assets\AI-AHU\Boss1\Boss1FSM.cs" />
+    <Compile Include="Assets\AI-AHU\Boss1\Boss1State.cs" />
+    <Compile Include="Assets\AI-AHU\Boss1\LaserEye\LEFSM.cs" />
+    <Compile Include="Assets\AI-AHU\Boss1\LaserEye\LEState.cs" />
+    <Compile Include="Assets\AI-AHU\Boss1\LaserEye\Laser2.cs" />
+    <Compile Include="Assets\AI-AHU\Boss1\WaveEye.cs" />
+    <Compile Include="Assets\AI-AHU\Cryer\CryerFSM.cs" />
+    <Compile Include="Assets\AI-AHU\Cryer\CryerStates.cs" />
+    <Compile Include="Assets\AI-AHU\Cryer\Tear.cs" />
+    <Compile Include="Assets\AI-AHU\IState.cs" />
+    <Compile Include="Assets\AI-AHU\LaserShooter\LSFSM.cs" />
+    <Compile Include="Assets\AI-AHU\LaserShooter\LSState.cs" />
+    <Compile Include="Assets\AI-AHU\LaserShooter\Laser.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\Aoi\PlayerScripts\RigCTRL.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\Hero Knight - Pixel Art\ColorSwap\ColorSwap_HeroKnight.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\Hero Knight - Pixel Art\Demo\DestroyEvent_HeroKnight.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\Hero Knight - Pixel Art\Demo\HeroKnight.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\Hero Knight - Pixel Art\Demo\Sensor_HeroKnight.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\PlayerScripts\AllHpCTRL.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\PlayerScripts\AttackCTRL.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\PlayerScripts\AttackTest.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\PlayerScripts\Damage CTRL.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\PlayerScripts\EventManager.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\PlayerScripts\GetDamage.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\PlayerScripts\HPCTRL.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\PlayerScripts\PlayerCTRL.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\TerrainScripts\Mirror.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\TerrainScripts\MovablePlatform.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\TerrainScripts\Platform.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\TerrainScripts\ReversiblThorn.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\TerrainScripts\Thorn.cs" />
+    <Compile Include="Assets\Levels-kd-new\Asset\Ruccho\FangAutoTile\FangAutoTile.cs" />
+    <Compile Include="Assets\Levels-kd-new\Asset\Ruccho\FangAutoTile\FangAutoTilePattern.cs" />
+    <Compile Include="Assets\Levels-kd-new\Asset\Ruccho\FangAutoTile\Sample\OnMapPlayerController.cs" />
+    <Compile Include="Assets\Ui-neko\Levels-kd\ScenesShift\LevelLoader.cs" />
+    <Compile Include="Assets\Ui-neko\Levels-kd\ScenesShift\PauseCRTL.cs" />
+    <Compile Include="Assets\Ui-neko\Levels-kd\ScenesShift\SelectScene.cs" />
+    <Compile Include="Assets\Ui-neko\Pepper\Pause.cs" />
+    <Compile Include="Assets\Ui-neko\Pepper\Scripts\DialogueTrigger.cs" />
+    <Compile Include="Assets\Ui-neko\Pepper\Scripts\Dialougue.cs" />
+    <Compile Include="Assets\Ui-neko\Pepper\Scripts\DialougueManager.cs" />
+    <Compile Include="Assets\Ui-neko\Pepper\Scripts\UI\SettingMenu.cs" />
+    <Compile Include="Assets\Ui-neko\Pepper\Scripts\UI\ShowSteps.cs" />
+    <Compile Include="Assets\Ui-neko\Pepper\Scripts\UI\StartControl.cs" />
+    <Compile Include="Assets\Ui-neko\Pepper\Scripts\UI\StepsLeft.cs" />
+    <Compile Include="Assets\Ui-neko\Pepper\Scripts\count\counterpart.cs" />
+    <Compile Include="Assets\Ui-neko\Pepper\follow.cs" />
+    <Compile Include="Assets\Ui-neko\Pepper\pepper.cs" />
+    <Compile Include="Assets\Ui-neko\Pepper\success.cs" />
+    <None Include="Assets\BasicMovement-Aoi\Plugins\Demigiant\DOTween\readme.txt" />
+    <None Include="Assets\Levels-kd-new\Asset\Ruccho\FangAutoTile\Readme.txt" />
+    <None Include="Assets\Levels-kd-new\Asset\Ruccho\FangAutoTile\Readme-ja.txt" />
+    <None Include="Assets\BasicMovement-Aoi\Hero Knight - Pixel Art\ColorSwap\Sprites-ColorSwap.shader" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.21f1c1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -274,7 +310,7 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.21f1c1/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
     <Reference Include="DOTween">
-      <HintPath>D:/文件夹/Unity/111/GitHub/Robot/Assets/Aoi/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
+      <HintPath>D:/文件夹/Unity/111/GitHub/Robot/Assets/BasicMovement-Aoi/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.21f1c1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
