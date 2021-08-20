@@ -44,6 +44,9 @@ public class PlayerCTRL : MonoBehaviour
     public float DashWaitTime;
     public bool IsDashing = false;
     public bool WasDashed;
+    public float DashOffsetTime;
+    float DashOffsetTimeCount = 0;
+    bool DashOffsetSwitch = false;
     bool CanDash = true;
     Vector2 DashingDir;
     [Header("爬墙")]
@@ -142,6 +145,16 @@ public class PlayerCTRL : MonoBehaviour
             ClimbingAccelerateTimer = 0f;
             IsClimbing = false;
         }
+        if(DashOffsetSwitch)
+        {
+            DashOffsetTimeCount += Time.deltaTime;
+            if(DashOffsetTimeCount > DashOffsetTime)
+            {
+                CanDash = true;
+                DashOffsetTimeCount = 0;
+                DashOffsetSwitch = false;
+            }
+        }
         #endregion
 
         #region 爬墙细节优化：下落加速
@@ -212,6 +225,8 @@ public class PlayerCTRL : MonoBehaviour
                 Rig.velocity = Vector2.zero;
                 //施加一个力，让玩家飞出去
                 Rig.velocity += DashingDir * DashForce;
+                Camera.main.transform.DOShakePosition(0.2f, 0.5f, 14, 90, false, true) ;
+                //Camera.main.DOShakeRotation(2, new Vector3(10, 7, 15));
                 StartCoroutine(Dash());
             }
 
@@ -344,22 +359,16 @@ public class PlayerCTRL : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (!isInvincible)
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
-            {
-                GetDamage();
-            }
+            GetDamage();
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (!isInvincible)
+        if (!isInvincible && collision.gameObject.CompareTag("Tear"))
         {
-            if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
-            {
-                GetDamage();
-            }
+            GetDamage();
         }
         if (IsDashing && collision.gameObject.CompareTag("Tear"))
         {
@@ -432,6 +441,8 @@ public class PlayerCTRL : MonoBehaviour
 
     IEnumerator Dash()
     {
+        DashOffsetSwitch = true;
+        CanDash = false;
         IsDashing = true;
         isInvincible = true;
         //关闭玩家的移动和跳跃的功能

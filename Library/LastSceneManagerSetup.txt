@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/BasicMovement-Aoi/Scenes/SampleScene.unity
+- path: Assets/Levels-kd-new/1/1-1/1-1-1.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

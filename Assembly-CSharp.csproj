@@ -99,6 +99,7 @@
     <Compile Include="Assets\BasicMovement-Aoi\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs" />
     <Compile Include="Assets\BasicMovement-Aoi\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
     <Compile Include="Assets\BasicMovement-Aoi\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs" />
+    <Compile Include="Assets\BasicMovement-Aoi\RippleEffect\RippleEffect.cs" />
     <Compile Include="Assets\BasicMovement-Aoi\TerrainScripts\Mirror.cs" />
     <Compile Include="Assets\BasicMovement-Aoi\TerrainScripts\MovablePlatform.cs" />
     <Compile Include="Assets\BasicMovement-Aoi\TerrainScripts\Platform.cs" />
@@ -122,6 +123,7 @@
     <Compile Include="Assets\Ui-neko\Pepper\follow.cs" />
     <Compile Include="Assets\Ui-neko\Pepper\pepper.cs" />
     <Compile Include="Assets\Ui-neko\Pepper\success.cs" />
+    <None Include="Assets\BasicMovement-Aoi\RippleEffect\RippleEffect.shader" />
     <None Include="Assets\BasicMovement-Aoi\Plugins\Demigiant\DOTween\readme.txt" />
     <None Include="Assets\Levels-kd-new\Asset\Ruccho\FangAutoTile\Readme.txt" />
     <None Include="Assets\Levels-kd-new\Asset\Ruccho\FangAutoTile\Readme-ja.txt" />

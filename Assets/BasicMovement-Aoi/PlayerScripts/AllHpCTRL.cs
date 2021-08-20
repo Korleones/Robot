@@ -55,7 +55,7 @@ public class AllHpCTRL : MonoBehaviour
             IsDead = true;
             PlayerCTRL.Player.isDeath = true;
             PlayerCTRL.Player.MoveDisabled();
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0, -5);
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             Anim.SetBool("IsDeath", true);
             restartTimer = true;
             return true;
