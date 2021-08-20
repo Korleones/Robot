@@ -1,8 +1,12 @@
 ﻿<Properties StartupConfiguration="{E7A24A7F-1C0A-CD74-A8B0-B26137CF313C}|">
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/BasicMovement-Aoi/PlayerScripts/PlayerCTRL.cs">
+    <Files>
+      <File FileName="Assets/BasicMovement-Aoi/PlayerScripts/PlayerCTRL.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="08c3194e-e053-47d0-8603-c2e027233a45" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="e5ca763a-cad2-4023-b0a9-b6cd9ee8f52f" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

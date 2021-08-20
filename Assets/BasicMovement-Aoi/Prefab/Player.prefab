@@ -199,7 +199,7 @@ MonoBehaviour:
   DashWaitTime: 0.2
   IsDashing: 0
   WasDashed: 0
-  DashOffsetTime: 5
+  DashOffsetTime: 0
   LeftWallPointOffset: {x: -0.12, y: 1}
   RightWallPointOffset: {x: 0.12, y: 1}
   WallLayerMask:
