@@ -217,7 +217,7 @@ public class PlayerCTRL : MonoBehaviour
                 {
                     DashingDir.x = FaceToRight;
                 }
-                if (Input.GetAxis("Vertical") == 0 || Input.GetAxis("Horizontal") == 0)
+                if (Input.GetAxisRaw("Vertical") == 0 || Input.GetAxisRaw("Horizontal") == 0)
                 {
                     DashingDir *= 1.414f;
                 }
