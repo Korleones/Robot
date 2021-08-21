@@ -1,7 +1,8 @@
 ﻿<Properties StartupConfiguration="{E7A24A7F-1C0A-CD74-A8B0-B26137CF313C}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/BasicMovement-Aoi/PlayerScripts/PlayerCTRL.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Ui-neko/Levels-kd/ScenesShift/SelectScene.cs">
     <Files>
       <File FileName="Assets/BasicMovement-Aoi/PlayerScripts/PlayerCTRL.cs" Line="1" Column="1" />
+      <File FileName="Assets/Ui-neko/Levels-kd/ScenesShift/SelectScene.cs" Line="10" Column="6" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
