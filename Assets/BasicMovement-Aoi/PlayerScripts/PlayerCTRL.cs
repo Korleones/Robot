@@ -36,6 +36,7 @@ public class PlayerCTRL : MonoBehaviour
     public Vector2 PointOffset;
     public Vector2 GroundSize;
     public LayerMask GroundLayerMask;
+    public bool canFall = true;
     bool GravityModifier = true;
     [Header("冲刺")]
     public float DashForce;
@@ -346,14 +347,16 @@ public class PlayerCTRL : MonoBehaviour
 
         #endregion
 
-        if (Rig.velocity.y >= 0)
+        if (canFall)
         {
-            Rig.gravityScale = gravityScale;
-        }
-        else
-        {
-            Rig.gravityScale = fallGravityScale;
-
+            if (Rig.velocity.y >= 0)
+            {
+                Rig.gravityScale = gravityScale;
+            }
+            else
+            {
+                Rig.gravityScale = fallGravityScale;
+            }
         }
     }
 

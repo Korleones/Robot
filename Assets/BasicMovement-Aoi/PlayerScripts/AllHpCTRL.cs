@@ -55,6 +55,8 @@ public class AllHpCTRL : MonoBehaviour
             IsDead = true;
             PlayerCTRL.Player.isDeath = true;
             PlayerCTRL.Player.MoveDisabled();
+            PlayerCTRL.Player.canFall = false;
+            PlayerCTRL.Player.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             Anim.SetBool("IsDeath", true);
             restartTimer = true;
