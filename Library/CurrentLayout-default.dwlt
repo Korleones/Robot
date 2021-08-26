@@ -112,7 +112,10 @@ MonoBehaviour:
     x: 0
     y: 30
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
     width: 1536
     height: 731
@@ -120,6 +123,9 @@ MonoBehaviour:
   m_MaxSize: {x: 18004, y: 14042}
   vertical: 0
   controlID: 156
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
     width: 1792
@@ -129,6 +135,10 @@ MonoBehaviour:
   vertical: 0
   controlID: 15096
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+>>>>>>> a5f99ba2e678d3e25c2cc74c880703dcd5908d80
+>>>>>>> Stashed changes
 =======
 >>>>>>> a5f99ba2e678d3e25c2cc74c880703dcd5908d80
 >>>>>>> Stashed changes
@@ -152,6 +162,7 @@ MonoBehaviour:
     x: 0
     y: 0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     width: 798
     height: 1070
   m_MinSize: {x: 201, y: 442}
@@ -159,11 +170,26 @@ MonoBehaviour:
   vertical: 1
   controlID: 15097
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
     width: 684
     height: 731
   m_MinSize: {x: 201, y: 442}
   m_MaxSize: {x: 4001, y: 8042}
+<<<<<<< Updated upstream
+  vertical: 1
+  controlID: 63
+=======
+    width: 798
+    height: 1070
+  m_MinSize: {x: 201, y: 442}
+  m_MaxSize: {x: 4001, y: 8042}
+  vertical: 1
+  controlID: 15097
+>>>>>>> a5f99ba2e678d3e25c2cc74c880703dcd5908d80
+>>>>>>> Stashed changes
+=======
   vertical: 1
   controlID: 63
 =======
@@ -252,13 +278,19 @@ MonoBehaviour:
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   controlID: 15195
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
   controlID: 84
 =======
   controlID: 15195
 >>>>>>> a5f99ba2e678d3e25c2cc74c880703dcd5908d80
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 --- !u!114 &10
 MonoBehaviour:
@@ -331,6 +363,7 @@ MonoBehaviour:
     x: 1219
     y: 0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     width: 573
     height: 1070
   m_MinSize: {x: 276, y: 71}
@@ -340,6 +373,8 @@ MonoBehaviour:
   - {fileID: 18}
   - {fileID: 19}
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
     width: 279
     height: 731
@@ -360,6 +395,9 @@ MonoBehaviour:
   - {fileID: 13}
 =======
 >>>>>>> a5f99ba2e678d3e25c2cc74c880703dcd5908d80
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   m_Selected: 0
   m_LastSelected: 1
@@ -492,9 +530,21 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_Position:
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     m_Target: {x: 5.0576324, y: 1.592754, z: -25.541481}
     speed: 2
     m_Value: {x: 5.0576324, y: 1.592754, z: -25.541481}
+=======
+<<<<<<< HEAD
+    m_Target: {x: -4.3306966, y: 3.479715, z: -5.6927323}
+    speed: 2
+    m_Value: {x: -4.5472302, y: 3.4668262, z: -5.664127}
+=======
+    m_Target: {x: 5.0576324, y: 1.592754, z: -25.541481}
+    speed: 2
+    m_Value: {x: 5.0576324, y: 1.592754, z: -25.541481}
+>>>>>>> a5f99ba2e678d3e25c2cc74c880703dcd5908d80
+>>>>>>> Stashed changes
 =======
 <<<<<<< HEAD
     m_Target: {x: -4.3306966, y: 3.479715, z: -5.6927323}
@@ -556,9 +606,21 @@ MonoBehaviour:
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     m_Target: 10.7073555
     speed: 2
     m_Value: 10.7073555
+=======
+<<<<<<< HEAD
+    m_Target: 7.585939
+    speed: 2
+    m_Value: 7.9433913
+=======
+    m_Target: 10.7073555
+    speed: 2
+    m_Value: 10.7073555
+>>>>>>> a5f99ba2e678d3e25c2cc74c880703dcd5908d80
+>>>>>>> Stashed changes
 =======
 <<<<<<< HEAD
     m_Target: 7.585939
@@ -624,10 +686,13 @@ MonoBehaviour:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       m_SelectedIDs: 
       m_LastClickedID: 0
       m_ExpandedIDs: ae25ffffca25ffff6e35ffff8a35ffffa03fffffa23fffff1a50ffff5051ffff4e5bffff1c61ffff1e61ffffb261ffff0462ffff8865ffffe865ffff3466ffff9466fffff266ffff5267ffff9e67fffffe67ffff5868ffffba68ffffcc6affff8073ffff6874ffff4e75ffff427e0000d0860000
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
       m_SelectedIDs: 74caffff
       m_LastClickedID: -13708
@@ -637,6 +702,9 @@ MonoBehaviour:
       m_LastClickedID: 0
       m_ExpandedIDs: ae25ffffca25ffff6e35ffff8a35ffffa03fffffa23fffff1a50ffff5051ffff4e5bffff1c61ffff1e61ffffb261ffff0462ffff8865ffffe865ffff3466ffff9466fffff266ffff5267ffff9e67fffffe67ffff5868ffffba68ffffcc6affff8073ffff6874ffff4e75ffff427e0000d0860000
 >>>>>>> a5f99ba2e678d3e25c2cc74c880703dcd5908d80
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -701,6 +769,7 @@ MonoBehaviour:
     m_SearchArea: 1
     m_Folders:
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
 <<<<<<< HEAD
     - Assets/BasicMovement-Aoi/Scenes
@@ -719,6 +788,21 @@ MonoBehaviour:
 =======
 >>>>>>> a5f99ba2e678d3e25c2cc74c880703dcd5908d80
 >>>>>>> Stashed changes
+=======
+<<<<<<< HEAD
+    - Assets/BasicMovement-Aoi/Scenes
+  m_ViewMode: 1
+  m_StartGridSize: 64
+  m_LastFolders:
+  - Assets/BasicMovement-Aoi/Scenes
+=======
+    - Assets/AI-AHU/Boss1
+  m_ViewMode: 1
+  m_StartGridSize: 64
+  m_LastFolders:
+  - Assets/AI-AHU/Boss1
+>>>>>>> a5f99ba2e678d3e25c2cc74c880703dcd5908d80
+>>>>>>> Stashed changes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/kandi/Unity/Robot
   m_LockTracker:
@@ -735,6 +819,10 @@ MonoBehaviour:
     m_LastClickedID: 0
     m_ExpandedIDs: 00000000326f0000346f0000366f0000386f00003a6f00003c6f00003e6f0000406f0000426f0000446f0000466f0000486f00004a6f0000566f0000586f000000ca9a3b
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+>>>>>>> a5f99ba2e678d3e25c2cc74c880703dcd5908d80
+>>>>>>> Stashed changes
 =======
 >>>>>>> a5f99ba2e678d3e25c2cc74c880703dcd5908d80
 >>>>>>> Stashed changes
@@ -766,13 +854,19 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     m_ExpandedIDs: 00000000326f0000346f0000366f0000386f00003a6f00003c6f00003e6f0000406f0000426f0000446f0000466f0000486f00004a6f0000566f000000ca9a3b
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
     m_ExpandedIDs: 00000000463c0000483c00004a3c00004c3c00004e3c0000503c0000523c0000543c0000563c0000583c00005a3c00005c3c00005e3c0000
 =======
     m_ExpandedIDs: 00000000326f0000346f0000366f0000386f00003a6f00003c6f00003e6f0000406f0000426f0000446f0000466f0000486f00004a6f0000566f000000ca9a3b
 >>>>>>> a5f99ba2e678d3e25c2cc74c880703dcd5908d80
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -802,6 +896,12 @@ MonoBehaviour:
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+    m_ExpandedInstanceIDs: 02620000
+=======
+>>>>>>> Stashed changes
 =======
 <<<<<<< HEAD
     m_ExpandedInstanceIDs: 02620000

@@ -1,12 +1,18 @@
 sceneSetups:
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 - path: Assets/Levels-kd-new/1/1-Boss/1-Boss.unity
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
 - path: Assets/BasicMovement-Aoi/Scenes/SampleScene.unity
 =======
 - path: Assets/Levels-kd-new/1/1-Boss/1-Boss.unity
 >>>>>>> a5f99ba2e678d3e25c2cc74c880703dcd5908d80
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   isLoaded: 1
   isActive: 1
