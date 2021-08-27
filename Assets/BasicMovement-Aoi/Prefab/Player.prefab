@@ -45,7 +45,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.47477245, y: 0.9857211}
+  m_Offset: {x: 0.22963959, y: -0.2535621}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -56,7 +56,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2228155, y: 1.043257}
+  m_Size: {x: 0.73254955, y: 1.2339151}
   m_EdgeRadius: 0
 --- !u!114 &1465519584
 MonoBehaviour:
@@ -82,10 +82,10 @@ GameObject:
   - component: {fileID: 4931904189454488990}
   - component: {fileID: 4931904189454488991}
   - component: {fileID: 4931904189454488979}
-  - component: {fileID: 188485621}
   - component: {fileID: 1049101804}
   - component: {fileID: 1895605103}
-  - component: {fileID: 1744546635}
+  - component: {fileID: 452536381}
+  - component: {fileID: 1713503141}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -102,7 +102,7 @@ Transform:
   m_GameObject: {fileID: 4931904189454488985}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.805, y: -10.9007, z: 0}
-  m_LocalScale: {x: 1.1240927, y: 1.0238652, z: 1}
+  m_LocalScale: {x: 1.7, y: 1.7, z: 1}
   m_Children:
   - {fileID: 1321760293}
   m_Father: {fileID: 0}
@@ -147,12 +147,13 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ae297123f091bbf4e8f1835eb98fb293, type: 3}
+  m_Sprite: {fileID: 4874499040124962915, guid: e8d5a5c4a08f9a14e8b4bff86e0ac7c9,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.125, y: 1.71875}
+  m_Size: {x: 1.7, y: 1.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -188,11 +189,12 @@ MonoBehaviour:
   CanJump: 1
   gravityScale: 3.5
   fallGravityScale: 2
-  PointOffset: {x: 0, y: 0.25}
-  GroundSize: {x: 0.7, y: 0.8}
+  PointOffset: {x: 0, y: -0.8}
+  GroundSize: {x: 0.5, y: 0.8}
   GroundLayerMask:
     serializedVersion: 2
     m_Bits: 256
+  canFall: 1
   DashForce: 19
   DashMaxForce: 8
   DashDuration: 0.77
@@ -200,8 +202,8 @@ MonoBehaviour:
   IsDashing: 0
   WasDashed: 0
   DashOffsetTime: 0
-  LeftWallPointOffset: {x: -0.12, y: 1}
-  RightWallPointOffset: {x: 0.12, y: 1}
+  LeftWallPointOffset: {x: -0.1, y: -0.35}
+  RightWallPointOffset: {x: 0.1, y: -0.35}
   WallLayerMask:
     serializedVersion: 2
     m_Bits: 256
@@ -210,7 +212,7 @@ MonoBehaviour:
   WallVelocity: 0.4
   WallAccelerateTime: 0.1
   holdingTimeOffset: 0
-  ClimbingJumpForce: 24.15
+  ClimbingJumpForce: 17
   ClimbingJumpMaxForce: 8
   ClimbingJumpDuration: 0.77
   ClimbingJumpWaitTime: 0.1
@@ -233,7 +235,7 @@ Animator:
   m_GameObject: {fileID: 4931904189454488985}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0b63d5874381c5a4f86eb92540934862, type: 2}
+  m_Controller: {fileID: 9100000, guid: a784e8f81cb356248bf6d8ad3d1922db, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -242,33 +244,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &188485621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4931904189454488985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39b9346239bc5ab43a41675a27fd0665, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
-  canAttack: 1
-  AttackDuration: 0.4
-  IsOnGround: 0
-  IsClimbing: 0
-  IsDashing: 0
-  upvec: {x: 0.78, y: 0.3, z: 0}
-  upqua: {x: 0, y: 0, z: 90}
-  downvec: {x: -0.78, y: 0.5, z: 0}
-  downqua: {x: 0, y: 0, z: -90}
-  UpEffection: -5
-  DownEffection: 10
-  LeftEffection: 0
-  RightEffection: 0
-  count: 0
 --- !u!114 &1049101804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,7 +261,7 @@ MonoBehaviour:
   CurHp: 0
   CurMp: 0
   IsDead: 0
-  restartOffsetTime: 0.7
+  restartOffsetTime: 0.5
   Anim: {fileID: 4931904189454488979}
 --- !u!50 &1895605103
 Rigidbody2D:
@@ -309,8 +284,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!70 &1744546635
-CapsuleCollider2D:
+--- !u!68 &452536381
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -322,6 +297,40 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.7}
-  m_Size: {x: 0.7, y: 1.2}
-  m_Direction: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.14325385, y: -0.66461176}
+  - {x: -0.20070077, y: -0.55142164}
+  - {x: -0.198801, y: -0.037958935}
+  - {x: 0.1928719, y: -0.041535772}
+  - {x: 0.19623163, y: -0.53798044}
+  - {x: 0.14390549, y: -0.6645324}
+  - {x: -0.14183867, y: -0.66489553}
+--- !u!114 &1713503141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4931904189454488985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39b9346239bc5ab43a41675a27fd0665, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  canAttack: 1
+  AttackDuration: 0.4
+  IsOnGround: 0
+  IsClimbing: 0
+  IsDashing: 0
+  upvec: {x: -0.3, y: -0.1, z: 0}
+  upqua: {x: 0, y: 0, z: 90}
+  downvec: {x: 0.3, y: -0.1, z: 0}
+  downqua: {x: 0, y: 0, z: -90}
+  UpEffection: -5
+  DownEffection: 10
+  LeftEffection: 0
+  RightEffection: 0
+  count: 0

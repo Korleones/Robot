@@ -62,7 +62,7 @@ public class AttackCTRL : MonoBehaviour
         if(IsClimbing)
         {
             Anim.SetBool("Attack", false);
-            canAttack = true;
+            //canAttack = false;
         }
     }
 
@@ -137,9 +137,9 @@ public class AttackCTRL : MonoBehaviour
     }    
     #region 开始&结束攻击
     public void StartAttack() {
-        canAttack = false;
+        //canAttack = false;
         RegionColl.enabled = true;
-        RegionTrans.position = new Vector3(RegionTrans.position.x, RegionTrans.position.y +     0.01f, RegionTrans.position.z);
+        RegionTrans.position = new Vector3(RegionTrans.position.x, RegionTrans.position.y + 0.01f, RegionTrans.position.z);
     }
     public void EndAttack() {
         RegionColl.enabled= false;

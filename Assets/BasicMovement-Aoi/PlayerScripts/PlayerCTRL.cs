@@ -112,11 +112,13 @@ public class PlayerCTRL : MonoBehaviour
         if (Input.GetAxisRaw("Horizontal") > 0 && !IsClimbing)
         {
             FaceToRight = 1;
+            m_animator.SetBool("FaceToRight", true);
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }
         else if (Input.GetAxisRaw("Horizontal") < 0 && !IsClimbing)
         {
             FaceToRight = -1;
+            m_animator.SetBool("FaceToRight", false);
             transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }
         if (IsOnGround && !OnGround())
